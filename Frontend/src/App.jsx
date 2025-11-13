@@ -34,12 +34,16 @@ function App() {
 
 export default App */
 
+
+
 import { useEffect, useState } from "react";
+import Navbar from './Components/Navbar/Navbar';
+import React from 'react';
 
 function App() {
   const [disasters, setDisasters] = useState([]);
 
-  // Fetch data when the component loads
+  // Fetch data when the component loads from mongo db database
   useEffect(() => {
     fetch("http://localhost:5000/api/disasters")
       .then((res) => res.json())
@@ -49,6 +53,8 @@ function App() {
 
   return (
     <div className="p-6">
+      {/* Includes the Navbar */}
+      <Navbar />
       <h1 className="text-2xl font-bold mb-4">🌍 Recent Disasters</h1>
       {disasters.length === 0 ? (
         <p>No disasters found.</p>
@@ -67,7 +73,9 @@ function App() {
       )}
     </div>
   );
-}
+} 
+
+
 
 export default App;
 

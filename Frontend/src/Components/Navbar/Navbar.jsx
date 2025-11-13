@@ -1,13 +1,12 @@
 import React from 'react'
 import './Navbar.css'
-{/*import { Link } from 'react-router-dom';
-import HoverDropdown from './Hoverdropdown.jsx';*/}
+import myGif from '../../assets/Logo.gif';
 
 const Navbar = () => {
     return (
         <header className="header">
-            <a href="/" className="logo"><img src="Logo.gif" alt = "Logo" /></a>
-
+            <a href="/" className="logo"><img src={myGif} alt ="Animated hurricane" className ="logo-gif" /></a>
+            {/*Navbar links (they are displayed below changing the text between the a tags modifies the text for them on website directly)*/}
             <nav className="navbar">
                 <a href="/">Home</a>
                 <a href="/">About</a>
