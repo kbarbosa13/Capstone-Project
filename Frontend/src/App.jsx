@@ -55,8 +55,8 @@ function App() {
     <div className="p-6">
       {/* Includes the Navbar */}
       <Navbar />
-      <h1 className="text-2xl font-bold mb-4">🌍 Recent Disasters</h1>
-      {disasters.length === 0 ? (
+    {/* {} <h1 className="text-2xl font-bold mb-4">🌍 Recent Disasters</h1>*/}
+      {/*{disasters.length === 0 ? (
         <p>No disasters found.</p>
       ) : (
         <ul className="space-y-4">
@@ -70,7 +70,7 @@ function App() {
             </li>
           ))}
         </ul>
-      )}
+      */}
     </div>
   );
 } 
