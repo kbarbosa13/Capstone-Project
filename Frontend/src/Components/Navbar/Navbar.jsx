@@ -2,18 +2,18 @@ import React, { useState } from "react";
 import {Link, NavLink} from "react-router-dom";
 import "./Navbar.css";
 import Logo from "../../assets/Logo.png";
-import { navRoutes } from "./navRoutes"; //chat imports the path from navRoutes which is just all the labels and pathing for the navigation
+import { navRoutes } from "./navRoutes"; 
 
 function Navbar(){
 
     const [menuOpen, setMenuOpen] = useState(false);
-    const [openDropdown, setOpenDropdown] = useState(null); //chat
+    const [openDropdown, setOpenDropdown] = useState(null); 
 
-    const toggleDropdown = (label) => { //chat
-        setOpenDropdown(openDropdown === label ? null : label); //chat
+    const toggleDropdown = (label) => { 
+        setOpenDropdown(openDropdown === label ? null : label); 
     };
 
-    const handleLinkClick = () => { //chat
+    const handleLinkClick = () => { 
         setMenuOpen(false); //closes the mobile menu
         setOpenDropdown(null);  //closes any open dropdown
     }
@@ -22,7 +22,7 @@ function Navbar(){
         <>
       {/* HEADER SECTION */}
       <header className="top-header">
-        <Link to="/" className="title"><img src={Logo} alt="Logo" className="header-logo" /></Link>
+        <Link to="/" onClick={handleLinkClick} className="title"><img src={Logo} alt="Logo" className="header-logo" /></Link>
       
 
       <div className="header-search">
@@ -52,7 +52,6 @@ function Navbar(){
             
             {/* Main Menu */}
             <ul className={menuOpen ? "open" : ""}>
-                {/*chat*/}
                 {navRoutes.map((route) => (
                     <li key={route.label} className="dropdown">
                         {/* Parent button */}
@@ -67,7 +66,7 @@ function Navbar(){
                 </ul>
 
                 {/* Login button */}
-                    <NavLink to="/login" className="nav-login-btn">Login</NavLink>
+                    <NavLink to="/login" onClick={handleLinkClick} className="nav-login-btn">Login</NavLink>
                 </div>
                 
                 {/* Shared dropdown area */}
@@ -91,6 +90,6 @@ function Navbar(){
             </>
     );
 }
-                {/*end of chat*/}
+               
 
 export default Navbar;
