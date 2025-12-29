@@ -1,0 +1,49 @@
+/* Rename file to quick-links so we can prevent confusion */
+/* div container that wraps the entire vertical nav container */
+.quick-links-container {
+  max-width: 250px;                               /* Sets a max width for the quick-links-container so it doesn't get to big */
+  background-color: #1096b7;                    /* Sets the background color of the section */
+  padding: 20px;                                  /* Applies spacing between the content and its border */
+  border-radius: 8px;                             /* Applies border radius for rounded corners */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);        /* Applies a box-shadow (horizontal offset, vertical offset, blur) */
+  font-family: Arial, sans-serif;                 /* font-family provides a list of fonts that the browser will use based off whether or not the user has it on their device */                                                             
+  margin-inline-end: 50px;                        /* Adds 30px of space to the end of an elements content flow */
+  margin-top: 100px;                              /* Adds 100px of space between the container and other elements above it (used for pushing the quick links down to align with news cards) */
+  align-self: flex-start;                         /* Ensures that it starts at the edge of the axis of its container */
+  height: fit-content;                            /* Allows the height to adapt dynamically to its content */
+}
+
+/* This is styling for the wrapper that goes around the section title dynamically declared within the VerticalNav.jsx file (This is all the styling for the header above all the quick links) */
+.section-title {
+  padding: 8px 0;                                  /* Applies spacing between the header and its border (top&bottom, left&right) */
+  font-size: 14px;                                 /* Changes the font-size to 14px */
+  font-weight: bold;                               /* Applies bold to the text */                      
+  color: #ffffff;                                /* Applies white color to the text */
+  text-transform: uppercase;                       /* Transforms the text making it all display as uppercase */
+  letter-spacing: 0.5px;                           /* Applies a letter spacing between each letter */
+}
+
+/* This is styling for a container that holds all the individual quick links within verticalNav.jsx */
+.quick-links {
+  display: flex;                                   /* Applies a flex box display */
+  flex-direction: column;                          /* Displays elements here vertically */
+  gap: 10px;                                       /* Applies a 10px gap between each quick link */
+  margin-left: 12px;                               /* Applies a spacing of 12px between the container and its outer elements (Here it pushes the container 12px to the right away from the bigger container that houses the whole quick links section) */
+  padding-left: 12px;                              /* Applies a spacing of 12px between the content and its border on the left side */   
+  border-left: 2px solid #ffffff;                /* Styles the border on the left side. Making it 2px solid and white */
+}
+
+/*----------------------------------------------------------- Individual link Styling ------------------------------------------------------------*/
+/* This is styling for each individual link */
+.quick-link {
+  color: white;                                   /* Changes the color to white */
+  text-decoration: none;                            /* Removes the text decoration on the link that is there by default */
+  font-size: 13px;                                  /* Makes the font size 13px */
+  padding: 4px 0;                                   /* Applies spacing between the content and its border (Gives spacing between the individual links) (top&bottom, left&right) */                     
+}
+
+/* This is the styling for each individual link when you hover over it */
+.quick-link:hover {
+  color: #bdbfc0;                                 /* Modifies the color of the text */
+  transition: color 0.2s;                           /* Applies a transition style */
+}

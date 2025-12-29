@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react'                 // Import react library 
 
 function Login() {
   return (
-    <div>Login</div>
+    <div>Login</div>                      // Dispalys the word "Login" on the page
   );
 }
 
-export default Login;
+export default Login;                     // Exports the Login function for later use in the app.jsx file

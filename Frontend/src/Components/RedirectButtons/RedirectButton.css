@@ -1,0 +1,42 @@
+/* Style for the positioning wrapper div in Home.jsx */
+.redirect-Wrapper {
+  padding: 10px;                                   /* Applies spacing between the content and its border */
+  margin-top: 40px;                                /* Applies  spacing between the top border and other elements around it */                               
+  margin-bottom: 40px                              /* Applies  spacing between the bottom border and other elements around it */
+}
+
+/* Styling for the section header h2 element within Home.jsx */
+.redirect-Wrapper h2 {
+  font-size: 30px;                                  /* Applies a font size of 30 px to the h2 tag text */
+  color: #172554;                                 /* Modifies the color of the text */
+  margin: 0 0 auto 50px;                            /* Modifies the spacing of the border and elements around it (top, right, bottom, left) */
+  text-align: left;                                 /* Modifies the placement of the text to be aligned to the left side of its container */                            
+}
+
+/* Wrapper container for all the buttons */
+.resources-grid {
+  width: 90%;                                        /* Makes the container only take up 90% of the devices width */  
+  margin: 20px auto 0 auto;                          /* Applies spacing between the elements border and the other elements around it (top, right, bottom, left) */
+  background-color: #1096b7;                       /* Changes the background color of the container */
+  padding: 20px 30px;                                /* Spacing between the buttons and the container (top&bottom, right&left) */
+  border-radius: 8px;                                /* Applies a border radius to the container giving it a rounded look */
+  display: grid;                                     /* Displays the elements in a grid layout */
+  grid-template-columns: repeat(3, 1fr);             /* Sets it up so there is a total of 3 columns for the grid making sure that they each take up equal space*/
+  gap: 20px;                                         /* Sets up a gap of 20px between all the columns of the */                        
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);           /* Sets up a box-shadow (horizontal offset, vertical offset, blur) */
+}
+
+/* Position styling for all the buttons within Home.jsx (div wrapper for each column) */
+.resources-column {
+  display: flex;                                      /* Sets the display to a flex-box */
+  flex-direction: column;                             /* Sets up the elements to be displayed in a column */
+  gap: 10px;                                          /* Gives a 10px gap to all the buttons */
+}
+
+/* Button styling for the button creation declared in RedirectButton.css */
+.button-style{
+  padding: 10px 20px;                                  /* Applies spacing between the content and its container (top&bottom, left&right) */                                              
+  font-size: 1rem;                                     /* Sets the font size to about 16px (1rem is about 16px on most browsers) */
+  border-radius: 8px;                                  /* Applies a radius to the buttons' border giving it a rounded look  */
+  cursor: pointer;                                     /* Changes the cursor to a pointer when hovering over buttons */
+}

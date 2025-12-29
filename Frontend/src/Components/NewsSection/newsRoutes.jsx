@@ -1,68 +1,63 @@
-// We are using inline styles instead of a separate CSS file.
-import React from "react";
-import "./NewsSection.css";
-
-const newsItems = [
-  {
-    title: "Texas Flash Flood",
+// This is an array set to the variable newsRoutes. It holds the routing information for all the information for each news card
+export const newsRoutes = [
+    // Index 0
+    {
+    title: "Texas Flash Flood",                                    // Title for the news card
+                                                                   // Text for the news card                   
     subtext: "Storm conditions are expected to continue in Texas, which has already had impressive rainfall this week...",
+                                                                   // Direct link to the image of the news story
     image: "data:image/jpeg;base64,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",
+                                                                   // Link to the website
     link: "https://www.nbcnews.com/weather/storms/texas-braces-heavy-rain-flash-flooding-storm-continues-rcna244950"
   },
+  // Index 1
   {
-    title: "Thailand Flood",
+    title: "Thailand Flood",                                       // Title for the news card
+                                                                   // Text for the news card
     subtext: "Thailand’s navy will deploy an aircraft carrier to the flood-stricken south, as public outcry mounts over the government’s response to a crisis that has hit about 2 million people and left an entire southern city under water...",
+                                                                   // Direct link to the image of the news story
     image: "https://cdn.i-scmp.com/sites/default/files/styles/1200x800/public/d8/images/canvas/2025/11/25/cb01eda3-a04b-40f3-a842-91bfb3bbd998_8aa020cf.jpg?itok=hWBvW_Py&v=1764069630",
+                                                                   // Link to the website
     link: "https://www.scmp.com/week-asia/health-environment/article/3334123/thailand-scrambles-aid-residents-floodwaters-rise-stranded-desert-island"
   },
+  // Index 2
   {
-    title: "Alaska Climate Change",
+    title: "Alaska Climate Change",                                // Title for the news card 
+                                                                   // Text for the news card
     subtext: "UNEAU, Alaska (AP) — Storms that battered Alaska's western coast this fall have brought renewed attention to low-lying Indigenous villages left increasingly vulnerable by climate change...",
+                                                                   // Direct link to the image of the news story 
     image: "https://www.usnews.com/object/image/0000019a-5cbd-d3c9-afdb-7dff29f30000/6c1560c66ecd486a9aa1f6435ebe9f0bAlaska_Typhoon_Aftermath_39225.jpg?update-time=1762491725000&size=responsive970",
+                                                                   // Link to the website
     link: "https://www.usnews.com/news/us/articles/2025-11-22/alaska-native-villages-have-few-options-and-little-us-help-as-climate-change-devours-their-land"
   },
+  // Index 3
   {
-    title: "Indonesian Landslides",
+    title: "Indonesian Landslides",                               // Title for the news card
+                                                                  // Text for the news card
     subtext: "AGAM, Indonesia (AP) — Improved weather on Saturday helped rescuers on Indonesia's Sumatra island recover more bodies as they struggled to reach several areas that were hit by landslides and flash floods...",
+                                                                  // Direct link to the image of the news story
     image: "https://www.usnews.com/object/image/0000019a-cdf2-d104-afba-ddfb45cc0000/13b23f11d28c4018b252a92881b49d0eIndonesia_Extreme_Weather_Landslides_85032.jpg?update-time=1764390601000&size=responsive970",
+                                                                  // Link to the website
     link: "https://www.usnews.com/news/world/articles/2025-11-28/death-toll-from-floods-and-landslides-on-indonesias-sumatra-island-rises-to-248-authorities-say",
   },
+  // Index 4
   {
-    title: "NASA Breakthrough",
+    title: "NASA Breakthrough",                                   // Title for the news card
+                                                                  // Text for the news card
     subtext: "Tsunamis are notoriously difficult to spot on the open ocean as they race towards shore. But in the summer of 2025, scientists watched one unfold as it happened.",
+                                                                  // Direct link to the image of the news story 
     image: "https://ichef.bbci.co.uk/images/ic/1024xn/p0mfzxlb.jpg.webp",
+                                                                  // Link to the website 
     link: "https://www.bbc.com/future/article/20251111-how-nasa-spotted-a-tsunami-in-real-time",
   },
+  // Index 5
   {
-    title: "Bamboo Earthquake Resister",
+    title: "Bamboo Earthquake Resister",                          // Title for the news card 
+                                                                  // Text for the news card
     subtext: "As well as being cheap, bamboo appears to have remarkable qualities of seismic resistance. Now it's being used to try to protect people from earthquakes.",
+                                                                  // Direct link to the image of the news story
     image: "https://ichef.bbci.co.uk/images/ic/1024xn/p0mc8s1r.jpg.webp",
+                                                                  // Link to the website
     link: "https://www.bbc.com/future/article/20251028-the-bamboo-buildings-that-sway-in-earthquakes",
   }
 ];
-
-function NewsSection() {
-  return (
-    <section className="news-section">
-        <h2 className = "news-header">Featured News</h2>
-    
-    <div className="news-container">
-      {newsItems.map((item, index) => (
-        <a
-          key={index}
-          href={item.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="news-card"
-        >
-          <img src={item.image} alt={item.title} />
-          <h3>{item.title}</h3>
-          <p>{item.subtext}</p>
-        </a>
-      ))}
-    </div>
-    </section>
-  );
-}
-
-export default NewsSection;

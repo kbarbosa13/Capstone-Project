@@ -1,40 +1,16 @@
-.App {
-    background-color: #fefefe;
-    height: 100vh;
-    width: 100%;
+/* This class is used to position the news cards and the quicklinks (verticalNav) next to eachother. This needs to be done since by default every component that we put into the app.jsx file is stacked on top of eachother since we have a column like display stlye set up */
+.position-NextTo {
+  display: flex;                                     /* Enables the flexible box layout model for the container element. Allowing you to use flex-direction to style how the elements will position themselves (by default flex-direction: row is the automatically applied making it so the items are displayed within the same row) */                                       
+  width: 100vw;                                      /* Sets the width of the container to take up 100% */
+  margin-top: 30px;                                  /* Provides spacing between the border of the element and other elements around it */
+  align-items: flex-start;                           /* Ensures that the element starts at the very beginning of its containers axis (Here makes sure that the first element within this wrapper starts on the very left edge) */
 }
 
-/* Side-by-side layout */
-.content-layout {
-  display: flex;
-  width: 100%;
-  margin-top: 30px;
-  align-items: flex-start;
-}
-
-/* Vertical Nav = 50% */
-.content-layout .vertical-nav-container {
-  width: 25%;
-}
-
-/* News Section = 50% */
-.content-layout .news-container {
-  width: 75%;
-}
-
+/* This is styling for the html, body, and #root elements of the website */
 html, body, #root {
-    height: 100%;
-    margin: 0;
-}
-
-.app-container {
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.main-content {
-    flex: 1;
-}
+    height: 100%;                                    /* Sets the height of the element to be 100% */                               
+    width: 100dvw;                                   /* Sets the width of the element to take up 100 percent of the dynamic viewport width of the device */
+    margin: 0;                                       /* Resests the margin to 0 in case if a browser applies margin styling automatically */
+  }
 
 

@@ -1,40 +1,44 @@
+/* Helpful tip you can use ctrl-f to find specific words located in a document (Useful for finding classes) */
+/* Footer container handling the styling for everything within the footer container */
 .footer {
-  width: 100%;
-  background-color: #172554;   
-  color: white;
-  padding: 20px 0;
-  margin-top: 90%;            /* optional spacing from page content */
+  width: 100%;                                 /* Sets the width of the footer to be 100% ensuring it takes up 100% of the screen */
+  background-color: #172554;                 /* Sets the background color of the footer container */
+  color: white;                              /* Sets the text color to be white */
+  padding: 20px 0;                             /* Adds padding between the content of the footer and the border. Left value it top and bottom while the right value is the left and right */
 }
 
+/* Positioning of the content within the footer */
 .footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
+  max-width: 100vw;                            /* Sets a max width to the footer container */
+  margin: 0 auto;                               /* Sets margin essentially the distance between other elements and this element. First value is top and bottom distance while second is left and right */
+  padding: 0 20px;                              /* Applies space between the elements within the footer content. left value represents the top and bottom values while the right value represents the left and right values */
+  display: flex;                                /* Applies and flexible and therefore repsonsive display for the content within footer. Gives up access to teh flex-direction */
+  flex-direction: column;                       /* Stacks the elements put within here vertically */
+  align-items: center;                          /* Aligns those said elements centered */
+  gap: 10px;                                    /* Gives spacing between those elements */
 }
 
+/* Sizing of the heading text above the links */
 .footer-text {
-  font-size: 14px;
-  opacity: 0.85;
+  font-size: 14px;                               /* Gives the same font-size to the header as the rest of the links have */                            
 }
 
+/* Positioning for the links of the footer */
 .footer-links {
-  display: flex;
-  gap: 20px;
+  display: flex;                                 /* Display flex gives a flexible and responsive way to position the elements. Gives us access to the gap attribute we use as well. */
+  gap: 20px;                                     /* Gap of 20px between the links in the footer */
 }
 
+/* Styling for the footer links */
 .footer-links a {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 14px;
-  opacity: 0.9;
-  transition: opacity 0.2s ease;
+  color: #ffffff;                              /* Color of the links set to white */
+  text-decoration: none;                         /* Removes the text decoration */
+  font-size: 14px;                               /* Makes the font-size to 14px */
+  opacity: 0.8;                                  /* Modifies the opacity of the links in the footer allowing for hover effect to be created */
 }
 
+/* Styling for when the links are hovered in the footer */
 .footer-links a:hover {
-  opacity: 1;
+  opacity: 1;                                    /* Sets the opacity to 1 for the links allowing you to see them completely. This gives the effect hover effect transition */
+  transition: opacity 0.2s ease;                 /* Applies a transition whenever the opacity is modified. It takes 0.2s and uses the ease function */
 }

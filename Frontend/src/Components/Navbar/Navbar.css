@@ -1,302 +1,200 @@
-.dropdown-link.active {
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-.nav-separator {
-  border: 0;
-  border-top: 1px solid white; /* white line with some transparency */
-  width: 100vw;
-  margin: 8px 0; /* spacing above/below the line */
-}
-
-nav {
-  display: flex;
-  flex-direction: column; /* Stacks the items vertically */
-  align-items: center; /* centers the menu & subtitle */
-  justify-content: space-between;
-  align-items: center;
-}
-
-nav .title {
-  font-size: 1.5rem;
-  margin: 1rem;
-  font-weight: bold;
-  text-decoration: none;
-  color: white;
-}
-
-nav ul {
-  display: flex;
-  margin-left: auto;
-}
-
-nav ul li {
-  list-style: none;
-}
-
-nav ul li a {
-  display: block;
-  text-decoration: none;
-  color: white;
-  padding: 0.5rem;
-  margin: 0 0.5rem;
-  border-radius: 0.5rem;
-}
-
-nav ul li a:not(.active):hover {
-  background-color: #172554;
-
-}
-
-nav .menu {
-  display: none;
-  position: absolute;
-  top: 0.75rem;
-  right: 0.5rem;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 2.25rem;
-  height: 2rem;
-}
-
-nav .menu span {
-  height: 0.4rem;
-  width: 100%;
-  background-color: #fff;
-  border-radius: 0.2rem;
-}
-
-@media (max-width: 480px) {
-  nav .menu {
-    display: flex;
-  }
-
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  nav ul {
-    display: none; 
-    flex-direction: column;
-    width: 100%;
-    margin-bottom: 0.25rem;
-  }
-
-  nav ul.open {
-    display: flex;
-  }
-
-  nav ul li {
-    width: 100%;
-    text-align: center;
-  }
-
-  nav ul li a {
-    margin: 0.2rem 0.5rem;
-  }
-}
-
-/* Chat */
-/* Parent list items */
-.dropdown {
-  position: relative;
-}
-
-.dropdown-btn {
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-  padding: 15px;
-  margin-right: 100px;
-  font-size: 1rem;
-  font-weight: bold;
-}
-
-/* Dropdown menu */
-
-
-.dropdown-menu li {
-  padding: 8px 16px;
-}
-
-/* header styling */
-.top-header {
-  width: 100%;
-  background: #e2e2e1;   /* match your navbar color OR lighter */
-  padding: 15px 10%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between; /*space between logo and search bar */
-  align-items: center;
-  flex-wrap: nowrap;
-}
-
-.header-logo {
-  height: 80px; /* adjust to your logo size */
-}
-
-.header-search {
-  display: flex;
-  align-items: center;
-}
-
-.header-search input {
-  padding: 6px 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px 0 0 4px;
-  font-size: 0.9rem;
-}
-
-.header-search button {
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-left: none;
-  border-radius: 0 4px 4px 0;
-  background-color: #1096b7;
-  color: white;
-  cursor: pointer;
-}
-
-.header-search button:hover {
-  background-color: #0c7b97;
-}
-
-/* New testing */
-/* NAVBAR MAIN */
+/* Helpful tip you can use ctrl-f to find specific words located in a document (Useful for finding classes) */
+/* Main wrapper of the navbar encompassing all the other elements */
 .navbar {
-  background-color: #001b3d;
-  padding: 10px 40px;
-  display: flex;
-  justify-content: space-between;
-  position: relative; /* IMPORTANT so dropdown anchors to navbar */
-  z-index: 100;
+  background-color: #001b3d;                       /* Modifies the background color of the navbar */
+  padding: 10px 40px;                                /* Modifies the space between the content and the borders */
+  position: relative;                                /* IMPORTANT so dropdown anchors to the navbar (positions the dropdown relative to the */
 }
 
-/* Horizontal main menu */
-.nav-links {
-  display: flex;
-  gap: 40px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+/* Styling for the horizontal bar that seperates the words and the navbar navigation options */
+.nav-separator {
+  border: 0;                                         /* Removes the border for the element we do this so we can make a thin line with only one border later */                                
+  border-top: 1px solid white;                     /* Adds the top border back to the element making it a thin white line now */
+  width: 100vw;                                      /* This makes the white line take up the whole width of the screen */
+  margin: 4px 0;                                     /* Spacing between the text and the other elements around it first value handles the top and bottom while second value handles left and right */
 }
 
-.nav-item {
-  cursor: pointer;
+/* Styles the nav tag (<nav></nav>) anything in this section will inherit these styles unless overidden with their own styles */
+nav {
+  display: flex;                                     /* Enables a flexible box layout used for the element and its children. Gives us access to the flex-direction as well as justify-content and align-items */
+  flex-direction: column;                            /* Stacks the items vertically */
+  align-items: center;                               /* Centers the menu & title above the navbar */
 }
 
-.nav-btn {
-  color: white;
-  font-size: 1rem;
-  font-weight: 600;
+/* Position styling for the main navigation bar (without this here ul doesn't behave as inteaded since it doesn't listen to the parent class above)*/
+nav ul {
+  display: flex;                                    /* Enables the flexible box layout aligns the menu navigation options to display them horizontally instead of vertically. (By default they display vertically)*/ 
+  list-style: none;                                 /* Removes the default circles that listing items gives to li elements automatically */
 }
 
-.nav-subtitle {
-  text-align: center;
-  width: 100%;
-  margin-top: 8px;
-  margin-bottom: 12px;
-  color: white;
-  font-size: 0.95rem;
-  font-weight: 400;
-  opacity: 0.95;
+/*------------------------------------------------------- Header section -------------------------------------------------------------------------*/
+/* Styling for the header (Section right above the navbar) */
+.top-header {
+  width: 100vw;                                      /* Sets the width of said header section to take up 100% of device view width  */
+  background: #e2e2e1;                             /* Sets the background color for the header */
+  padding: 4px 0;                                    /* Spacing between the content and the borders of the element. Left=top and bottom, Right=left and right */
+  display: flex;                                     /* Gives the element the flex-box display allowing for the element to essentially be displaying its content in a grid layout */
+  flex-direction: row;                               /* Ensures that the content is displayed in a row (this is default when not defining it) */
+  justify-content: space-between;                    /* Distributes the items evenly among the axis since we are displaying it along the row it will display this information with autocalculated space between the items */
+  flex-wrap: nowrap;                                 /* Ensures that the content within the header doesn't wrap */
 }
 
-.nav-login button {
-  background-color: white;
-  color: #1096b7;
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
-  padding: 8px 16px;
-  cursor: pointer;
+/* This handles the sizing for specifically the logo*/
+.header-logo {
+  height: 80px;                                      /* Adjust the logo size */
+  display: flex;                                     /* Gives the element the flex-box display allowing for the element to essentially be displaying its content in a grid layout */
+  padding: 0 0 0 5vw;                                /* Applies spacing between the content and its border (top, right, bottom, left) */
 }
 
-.nav-login button:hover {
-  background-color: #f0f0f0;
+/*------------------------------------------------------- Search Bar -----------------------------------------------------------------------------*/
+/* Positions the searchbar in the header section */
+.header-search {
+  display: flex;                                     /* Will keep the searchbar within the row with the rest of the elements in the header section */
+  align-items: center;                               /* Keeps the searchbar from being the size of its whole container */
+  padding: 0 2vw 0 0;                                /* Applies spacing between the content and its border (top, right, bottom, left) */
 }
 
-.nav-menu-login {
-  display: flex;
-  align-items: center;
-  gap: 20px; /* space between menu buttons and login */
+/* Styles the search bar at the top right of the header section */
+.header-search input {
+  padding: 5px 10px;                                 /* Spacing between the content and its container. Essentially makes the search bar bigger or smaller. Left value = top and bottom, Righ value = right and left */ 
+  border: 1px solid #ccc;                          /* Sizing of the border that surround the input searchbar */
+  border-radius: 4px 0 0 4px;                        /* Modifies the border edges (here it makes the rounded edges that we have on the search bar (Order of values: Top-left, Top-right, Bottom-right, Bottom-left */
+  font-size: 1rem;                                   /* Modifies the font-size of the search text within the search bar */
 }
 
-/* Keep nav links horizontal */
-.nav-links {
-  display: flex;
-  gap: 40px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+/* Styling for the go button next to the searchbar input */
+.header-search button {
+  padding: 7px 12px;                                 /* Spacing between the content and its container. Essentially makes the go button bigger or smaller. Left value = top and bottom, Righ value = right and left */ 
+  border: 1px solid #ccc;                          /* Adds a border around the go button */
+  border-left: none;                                 /* Removes the border on the left side since we have the seacrh input here so we don't need it */
+  border-radius: 0 4px 4px 0;                        /* Modifies the border edges (here it makes the rounded edges that we have on the go button (Order of values: Top-left, Top-right, Bottom-right, Bottom-left */
+  background-color: #1096b7;                       /* Changes the background color of the search bar go button */
+  color: white;                                    /* Modifies the color of the text to be white */
 }
 
-/* Style login button */
+/* Styling for the go button when it is hovered over */
+.header-search button:hover {
+  background-color: #0284c7;                       /* Changes the background color of the button when hovered over */
+  cursor: pointer;                                   /* Changes the cursor to be a pointer */
+}
+
+/*----------------------------------------------------------- Navigation title -------------------------------------------------------------------*/
+/* Styling for the navbar title right above the main navbar options */
+.nav-title {
+  text-align: center;                                /* Align the title to be centered */
+  width: 100vw;                                      /* Ensures that the title uses the whole viewport width container of the screen when aligning the text */
+  color: white;                                    /* Changes the color of the text to white */
+  font-size: 0.80rem;                                /* Changes the font-size of the text (most browsers have default of 1rem= 16px so we would 0.8rem would be about 13px for the size font */
+  opacity: 0.90;                                     /* Modifies the opacity of the text (I have this since I believe it makes it more viusally appealing since it is easier on the eyes to look at) */
+  font-weight: bold;                                 /* Makes the font bold */
+  padding-bottom: 4px;                               /* Adds space between the bottom of the container and the text itself. Acts like pushing the text upwards with a higher number */
+}
+
+/*------------------------------------------------------------ Login Button ----------------------------------------------------------------------*/
+/* Positioning of the login button */
+.nav-btn-positioning {
+  display: flex;                                     /* Displays the login button in row */
+  align-items: center;                               /* Ensures that the login button is aligned center within its container (Without this it will make the login button top and bottom borders extend) */
+  gap: 20px;                                         /* Adds a Space between navbar buttons and login button */
+}
+
+/* Styling the login button */
 .nav-login-btn {
-  background-color: #ed1c24;
-  color: white;
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
-  padding: 8px 16px;
-  cursor: pointer;
-  text-decoration: none;
+  background-color: #ed1c24;                       /* Changes the login button background color (Color of the red portion of the logo) */
+  color: white;                                    /* Changes the text color to white */
+  font-weight: bold;                                 /* Changes the font to bold */
+  border-radius: 5px;                                /* Gives the rounded corners to the edges of the border of the login button */
+  padding: 6px 12px;                                 /* Spacing between the text and its border */                              
+  text-decoration: none;                             /* Removes any text-decoration that may be put in by default */
 }
 
+/* Styling for the login button when it is hovered over */
+.nav-login-btn:hover{
+  cursor: pointer;                                   /* Changes the pointer to a cursor when hovering over the login button */
+  background-color: #ac1015;                       /* Modifies the background color of the login button when it is hovered over */
+}
 
-/* ⭐ SHARED DROPDOWN AREA ⭐ */
-.dropdown-shared {
-  position: absolute;
-  top: 100%; /* Directly under navbar */
-  left: 50%;
-  transform: translateX(-50%); /* centers the box */
-  
-  width: 80%;
-  max-width: 1000px; /* prevents it from becoming huge on big screens */
+/* --------------------------------------------------------------- Dropdown menu ---------------------------------------------------------------- */
+/* Styling for dropdown buttons that when clicked on opens the dropdown menu */
+.dropdown-btn {
+  background: none;                                 /* Removes the default background color of the main navigation buttons that open the dropdown list */
+  border: none;                                     /* Removes the border that the buttons have by default */
+  color: white;                                   /* Colors the text of the button to be white */
+  cursor: pointer;                                  /* Changes the cursor when hovering over the button to be a pointer */
+  padding: 10px;                                    /* Modifies the spacing between the content and the border surrounding the content */
+  margin-right: 9vw;                                /* Modifies the spacing between each button each button takes up 9% of the viewport width */                          
+  font-size: 1rem;                                  /* Sets the font-size to be 1rem which translates to 16px for most browsers  */
+  font-weight: bold;                                /* Sets the font-weight to bold for the dropdown-btn text */
+}
 
-  background: #1096b7;
-  padding: 20px 40px;
-
+/* Positioning for the dropdown menu when you click on the main dropdown menu button */
+.menu-shared {
+  position: absolute;                                /* Takes the dropdown menu out of the normal flow of elements on the website and makes allowing you to position it where you want relative to its parent element */
+  top: 100%;                                         /* Positions the dropdown menu directly underneath the main navigation bar options */
+  left: 50vw;                                        /* Positions the dropdown menu to take up 50% of the device viewport width */ 
+  transform: translateX(-50%);                       /* Moves the whole dropdown menu */
+  width: 80%;                                        /* Makes the dropdown menu take up 80% of the width of its container which spans the entire website */
+  max-width: 1000px;                                 /* prevents it from becoming huge on big screens */
+  background: #1096b7;                             /* Sets the background color of the dropdown menu */
+  padding: 20px 30px;                                /* Spacing between the navigation options text and its border. Left value = top and bottom, Right value = left and right */
   /* Columns layout for dropdown */
-  display: grid;
-  grid-template-columns: repeat(4,1fr); 
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px 25px; /* row gap, column gap */
-  border-top: 3px solid #0c5671;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-  z-index: 999;
+  display: grid;                                     /* Displays the menu like a grid */
+  grid-template-columns: repeat(4,1fr);              /* Makes it so each row has 4 columns before going onto the next line */
+  flex-wrap: wrap;                                   /* In case of text being to big to fit within the container wrap the text onto the next line */
+  gap: 15px 0px;                                     /* Modifies the gaps between rows and columns. (row gap, column gap) */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);          /* Adds a shadow to the menu when it is opened. (Y offset, X offset, blur) */ 
+  z-index: 1;                                        /* Anything with a lower z-index then this is below the menu. (default without defining is 0) */
 }
 
+/* Styling for the individual menu links */
 .dropdown-link {
-  text-decoration: none;
-  color: #ffffff;
-  font-weight: 500;
+  text-decoration: none;                              /* Removes the text decoration */
+  color: #ffffff;                                   /* Makes the text color white */                                  
 }
 
+/* Styling for the individual menu links when you hover over them */
 .dropdown-link:hover {
-  text-decoration: underline;
+  color: #ffffffbe;                                  /* Changes the color of the text when link is hovered over */
+  text-decoration: underline;                          /* Adds underline to the links when they are hovered over */                 
 }
 
-/* MOBILE SUPPORT */
+/* Styling for dropdown links of active links on navbar. Used in Navbar.jsx file */
+.dropdown-link.active {
+  font-weight: bold;                                 /* Sets the font for the active link to bold */
+  text-decoration: underline;                        /* Sets an underline for the active link */
+}
+/*----------------------------------------------------------- Smaller Screen Device  -------------------------------------------------------------*/
+/* Styling for elements on a smaller device up to 480px*/
 @media (max-width: 480px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
+
+  /* Positioning for the nav tag (<nav></nav>). */
+  nav {
+    display: flex;                                   /* Makes the display for nav tags into a flex box. Essentially sets up the display for a grid layout */
+    flex-direction: column;                          /* Stacks the elements ontop of eachother */
+    align-items: flex-start;                         /* Ensures that the item is aligned at the beginning edge of the container */
   }
 
-  .nav-links.open {
-    display: flex;
+  /* Styling for any ul elements within the nav tags (<ul></ul>). */
+  nav ul {
+    display: none;                                    /* Removes the ul elements from the website flow */
+    flex-direction: column;                           /* Will place elements in a column */
+    width: 100%;                                      /* Ensures that the ul elements takes up the whole width of the screen */
+    margin-bottom: 0.25rem;                           /* Pushes up the navigation options by 4 px (1rem is 16px for most browsers */
   }
 
-  .dropdown-shared {
-    position: static;
-    width: 100%;
-    box-shadow: none;
-    padding: 10px 20px;
+  /* Stlyling for when the navmenu is open */
+  nav ul.open {
+    display: flex;                                    /* Gives it a flexbox display */
+  }
+
+  /* Positioning for the li elements within the ul tag (<li></li>) */
+  nav ul li {
+    width: 100%;                                      /* Ensures that it takes up 100% of the devices browser width */
+    text-align: center;                               /* Aligns the navigation options to the center */
+  }
+
+  /* Positioning for the a tags that are within the li tags (<a></a>) */ 
+  nav ul li a {
+    margin: 0.2rem 0.5rem;                            /* Spacing between the border and the elements surrounding the border. Left value = top and bottom, Right value = left and right */
   }
 }

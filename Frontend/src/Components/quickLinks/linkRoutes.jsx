@@ -1,18 +1,15 @@
-import React, { useState } from "react";
-import "./VerticalNav.css"; // ← ADD THIS
-
-function VerticalNav() {
-  const [open, setOpen] = useState(null);
-
-  const sections = [
+ // An array created to house all the information needed for the quick links assigned to a variable "linkRoutes"
+ export const linkRoutes = [
+    // index 0
     {
-      title: "Federal Preparedness & Weather Intelligence",
-      items: [
-        { label: "NOAA", url: "https://www.noaa.gov/"},
+      title: "Federal Preparedness & Weather Intelligence",                           // Title header
+      items: [                                                                        // Children elements
+        { label: "NOAA", url: "https://www.noaa.gov/"},                               // Label: text for link. url: that it will take you to
         { label: "FEMA", url: "https://www.fema.gov/"},
         { label: "National Hurricane Center", url: "https://www.nhc.noaa.gov/"},
         { label: "National Weather Service", url: "https://www.weather.gov"},
     ],
+    // index 1
     },
     {
       title: "Volunteer Organizations Active in Disaster",
@@ -23,6 +20,7 @@ function VerticalNav() {
         { label: "Mennonite Disaster Service", url: "https://mds.org"},
         { label: "Team Rubicon", url: "https://teamrubiconusa.org"},
      ],
+    // index 2
     },
     {
       title: "National Hazard Monitoring & Prediction Centers",
@@ -36,30 +34,3 @@ function VerticalNav() {
       ],
     },
   ];
-
-  return (
-    <div className="vertical-nav-container">
-      {sections.map((section, index) => (
-        <div key={index} className="nav-section">
-          <h3 className="section-title">{section.title}</h3>
-
-            <div className="nav-links">
-              {section.items.map((item, i) => (
-                <a
-                  key={i}
-                  href={item.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="nav-link"
-                >
-                  {item.label}
-                </a>
-              ))}
-            </div>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-export default VerticalNav;

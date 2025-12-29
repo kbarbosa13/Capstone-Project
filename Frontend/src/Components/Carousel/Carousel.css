@@ -1,147 +1,139 @@
+/* Helpful tip you can use ctrl-f to find specific words located in a document (Useful for finding classes) */
+/* Style for carousel element */
 .carousel {
-position: relative;
-width: 100%;
-margin: auto;
-overflow: hidden;
-height: 480px;
+position: relative;                         /* Allows the carousel element to preserve its space. Ex: If you use top bottom left or right to move the element it will move the carousel element but preserve its original space so no other element attempts to take its space */ 
+width: 100%;                                /* Decides how much of the width it takes up of the parent container. Ex: if the width is less than 100% it will therefore have the element take up whatever designated space that is listed.*/
+margin: 0 auto;                             /* Controls spacing between the element and its neighboring elements. Ex: using margin-top: should provide more space between any elements above this current element. Same would happen for every other side of the element that you declare */
+overflow: hidden;                           /* Clips content that leaves the designated height and width of the element. For instance here we use it to clip any parts of the image that may go beyond the actual container of the website. */
+height: 75vh;                               /* Viewport-height (vh) this sizes the element based on direct percentage of the screen size. vh 100 being equivalent to setting the element to take up 100% of the screen size */
+height: 75dvh;                              /* Defines the height of the element (dvh: Dynamic-viewport-height) sizes element in same way as vh but accounts for UI changes resizing or moving such as in mobile devices.  */
+max-height: 500px;                          /* Sets a max height for bigger screen so the element doesn't end up taking up to much space */
 }
 
-/* Two column layout New*/
+/* Two column layout for carousel*/
 .carousel-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 0.3fr;   /* Left = carousel, Right = text */
-  width: 100%;
-  max-width: 100%;
-  margin: 0 auto;
-  align-items: center;
-  gap: 30px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15); /* Shadow */
+  display: grid;                             /* Defines the element as a grid allowing us to have rows and columns */
+  grid-template-columns: 75fr 25fr;          /* Left = carousel, Right = text  fr: is a fractional unit way to provide measurements. Ex: there is a total of 100fr so we do 75/100fr with it aproximately being 75% of the total fraction. This will mean that the left element (Carousel) will take up about 75% of the available space the element has. leaving the rest of it to other part of the element (text column) which is about 25% */
+  width: 100%;                               /* Sets carousel wrapper comonent to 100% encompassing */
+  max-width: 100%;                           /* Sets the max width of the website to 100% so it encompasses the whole website and never goes above that 100% */
+  margin: 0 auto;                            /* Spacing between the element's border and the elements outside the actual border */
+  align-items: center;                       /* Aligns the elemtns within the wrapper to the cneter */
+  gap: 30px;                                 /* Provides spacing between the rows and column items shorthand for column-gap and row-gap */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15); /* Shadow: 0 is the horizontal offset of the shadow, 4 is the vertical offset of the shadow and 20 is the blur of the shadow. The extra color channel value provided is there to adjust the opacity of the color */
 }
 
-/* New */
-.carousel_slides img {
-    width: 100%;
-    height:450px;
-    object-fit: cover;
-}
-
-/* Right Panel  New*/
+/* Right Panel  (text panel for the carousel) */
 .carousel-text-panel {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-
-    overflow-wrap: break-word; /* FIXES text breaking out */
-    word-break: break-word; /*additional saftey */
-    max-width: 100%;    /* prevents overflow */
+    padding: 20px;                           /* Controls the amount of space between the content and its border for the element essentially inner spacing */
+    display: flex;                           /* Provides a flexible and essentially responsive design for the element itself and any of its children */
+    flex-direction: column;                  /* Defines how the elements within the flex element are positioned. options are: columns, row, column-reverse and row-reverse. The one we are using stacks everything in a column in normal order from top to bottom as it is written inside the div container */
+    gap: 20px;                               /* Provides the gap between the different elements within the container. for instance here this gap will modify the space between the heading message, text and button for each text panel increasing the gap makes the space bigger. */
+    overflow-wrap: break-word;               /* Fixes text breaking out by allowing the browser to break an otherwise unbreakable string so it doesn't go beyond its container */
+    word-break: break-word;                  /* Allow browser to insert line breaks within a word at whatever points to prevent the overflow of the word outside of its container */
+    max-width: 100%;                         /* Prevents overflow by providing a max-width amount that the panel can take up */
 }
 
-/* New */
+/* Modifies the styling of the h2 elements within the carousel-text-panel container */
 .carousel-text-panel h2 {
-  font-size: 2rem;
-  color: #172554;
+  font-size: 2rem;                           /* Root em (rem) specifies a size relative to the font-size of the root element which is the html tag. By default the root size for most browsers is typically 16px so rem basically will multiply the set default value by the rem value */
+  color: #172554;                          /* Changes the color of the h2 elements within the container */
   margin: 0;
 }
 
-/* New */
+/* Modifies the styling of the p tag elements within the carousel-text-panel container */
 .carousel-text-panel p {
-  font-size: 1.1rem;
-  color: #333;
+  font-size: 1.1rem;                          /* Makes the font-size equal to 1.2 root size of the pixels */
+  color: #333;                              /* Color for the text of the paragraph tags */
 }
 
-/* New */
+/* Modifies the styling for the carousel text panel button */
 .carousel-cta-btn {
-  text-decoration: none;    /* removes underline */
-  padding: 10px 20px;
-  background: #1096b7;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  width: fit-content;
-  font-size: 1rem;
+  text-decoration: none;                      /* Removes underline given to the link by default */
+  padding: 10px 20px;                         /* Padding for the button. Space between the content and its border */
+  background: #1096b7;                      /* Background color of the button */
+  color: white;                             /* Color of the text of the button */
+  border: none;                               /* Removes the border of the button element */
+  border-radius: 6px;                         /* Changes the shape of the button the surrounding border */              
+  width: fit-content;                         /* Makes the content adjust to fit its container making sure it doesn't get larger or smaller than minimum and maximum size of its container */
+  font-size: 0.9rem;                          /* Makes the font-size a tad bit smaller then the root element so that the the text for the buttons don't go onto a new line causing button to have empty space */
 }
-/* New */
+
+/* Modfies the styling of the button when hovered over */
 .carousel-cta-btn:hover {
-  background: #0284c7;
+  background: #0284c7;                      /* Changes the background color of the button when it is hovered over */
+  cursor: pointer;                            /* Changes the cursor when hovering over the button to a pointer */
 }
 
-/* New */
-.carousel__slide video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+/* Modifies the carousel slide styling */
+.carousel_slide {
+min-width: 100%;                              /* Makes the slide take up 100% of its container size which end up being 75% of screen width since that is what the defined width is earlier in the carousel wrapper */
+opacity: 0;                                   /* Sets the opacity of image to 0. Doing this allows us to set other images that aren't currently in use to opacity of zero allowing us to highlight one specific image for the slide. removing this will have the very last iamge present for each slide and prevent all other images from being shown */
+transition: opacity 0.5s ease-in-out;         /* Styling for transitioning to another slide. first value is the transition-property, then the transition-duration and finally transition timing-function */
+position: absolute;                           /* Removes the element from the general flow and makes it so it is positioned relative to its nearest positioned ancestor which would be any element that has a position other than the default static. */
+top: 0;                                       /* Ensures that the top edge of this element aligns with the top edge of its positioning container */
+left: 0;                                      /* Ensures that the left edge of this element aligns with the left edge of its positioning container */
 }
 
-.carousel__slides {
-display: flex;
-transition: transform 0.5s ease-in-out;
-/* move slides based on active index */
+/* Modifies the styling of the video tag within the carousel_slide div container */
+.carousel_slide video {
+  width: 100%;                                /* Sets the width of the video to 100% of its container which is 75% of the whole screen since */
+  height: 100%;                               /* Sets the height of the video to be 100% of its container */
+  object-fit: cover;                          /* The video is resized to completely cover its container. Some videos are cut off due to earlier styling within the wrapper class preventing overflow */
+  display: block;                             /* Defines an element as a block-level element. Which in turn makes it start on a newline, take full-width and respect box model properties (Can set width, height, padding and margin for the block level elements). */
 }
 
-.carousel__slide {
-min-width: 100%;
-opacity: 0;
-transition: opacity 0.5s ease-in-out;
-position: absolute;
-top: 0;
-left: 0;
+/* Modifies the styling for an active slide */
+.carousel_slide.active {
+opacity: 1;                                   /* Makes the opacity for the active slide 1 which is essentialy 100% visibility */
+position: relative;                           /* Positions the elements relative to its positions without affecting any of the other elements positioning */
 }
 
-.carousel__slide.active {
-opacity: 1;
-position: relative;
+/* Styling for the arrows for the slideshow */
+.carousel_arrow {
+position: absolute;                           /* Positions the arrow element relative to its nearest positioned ancestor takes the element out of the normal document flow */
+top: 50%;                                     /* Moves the arrow down 50% from its origina */
+transform: translateY(-50%);                  /* Moves element vertically by a distance equal to 50% of the element's own height */
+background: rgba(255,255,255,0.7);          /* RGBA values for the color of the arrow background color last channel is the alpha channel controlling the opacity */
+border: none;                                 /* Removes the borders that the element has as well as makes sure they don't end up taking up any space */
+padding: 0.5rem 1rem;                         /* Padding left value is up and down padding while right value is left and right padding. rem means that it is relative to the root value */
+cursor: pointer;                              /* Modifies the cursor to a pointer when hovering occurs */
+font-size: 2rem;                              /* Font-size is 2 times the root value for the arrows */
+z-index: 1;                                   /* Controls the vertical stacking order of the elemnts on the website higher z value being in the front */
 }
 
-.carousel__slide img {
-width: 100%;
-display: block;
+/* Aligniment of the left arrow */
+.carousel_arrow--left {
+left: 10px;                                   /* Moves the left arrow away from the left side of container by 10px acts like padding */
 }
 
-/* Arrows */
-.carousel__arrow {
-position: absolute;
-top: 50%;
-transform: translateY(-50%);
-background: rgba(255,255,255,0.7);
-border: none;
-padding: 0.5rem 1rem;
-cursor: pointer;
-font-size: 2rem;
-z-index: 1;
+/* Alignment of the right arrow */
+.carousel_arrow--right {
+right: 10px;                                   /* Moves the right arrow away from the right side of the container acts like padding */
 }
 
-.carousel__arrow--left {
-left: 10px;
+/* Positioning of the carousel indicators (circles at the bottom of slideshow representing slide your currently on */
+.carousel_indicators {
+position: absolute;                            /* Takes the indicators out of the normal flow of the website and allows us to position them relative to its ancestor element */
+bottom: 10px;                                  /* Moves the indicators up 10px away from its container acts like padding */
+left: 50%;                                     /* Moves the indicators 50% away from the left of the container. Essentially centers the indicators */
+transform: translateX(-50%);                   /* Moves element horizontally by a distance equal to 50% of the element's own width */
+display: flex;                                 /* Allows a more flexible responsive design for the element. Gives access to the gap alignment element */
+gap: 8px;                                      /* Spacing between each indicator */
 }
 
-.carousel__arrow--right {
-right: 10px;
-}
-
-/* Indicators */
-.carousel__indicators {
-position: absolute;
-bottom: 10px;
-left: 50%;
-transform: translateX(-50%);
-display: flex;
-gap: 8px;
-}
-
+/* Styling for the indicators */
 .indicator {
-width: 12px;
-height: 12px;
-border-radius: 50%;
-border: none;
-background: rgba(255,255,255,0.7);
-cursor: pointer;
-padding: 0;
+width: 12px;                                   /* Gives indicator a width of 12px */
+height: 12px;                                  /* Gives indicator a height of 12px */
+border-radius: 50%;                            /* Gives borders to the indicators allowing them to become circles */
+border: none;                                  /* Removes the borders that encompasses the elements so they don't take up physical space on the website */
+background: rgba(255,255,255,0.7);           /* Background color of the indicators with RGBA values. last channel is the alpha channel handling opacity */
+cursor: pointer;                               /* Changes the cursor to a pointer when hovering over the indicators */
+padding: 0;                                    /* Ensures that the padding is zero for the indicators */
 }
 
+/* Styling for the active indicator */
 .indicator.active {
-background: rgba(255,255,255, 1);
+background: rgba(255,255,255, 1);            /* Background color with RGBA values. Last value handling the opacity */
 }
 

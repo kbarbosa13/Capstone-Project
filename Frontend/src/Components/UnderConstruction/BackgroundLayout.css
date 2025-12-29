@@ -1,0 +1,8 @@
+/* This is a style sheet that controls the background image of the pages that aren't finished yet. Styling for the underconstruction pages so it is just not left as a blank page. */
+.bg-layout-wrapper {
+  min-height: 100vh;                                             /* Makes the background take up 100% of the devices viewport height */
+  width: 100vw;                                                  /* Makes the background take up 100% of the width of its container */
+  background-image: url('../assets/background.jpg');             /* This sets the background image based off the pathing to the image in the folder structure */
+  background-size: cover;                                        /* This ensures that the background covers the entire container size of the website */
+  padding-top: 20px;                                             /* This pushes the background image down some pixels so it doesn't get cut off by the navigation bar content doesn't hide behind navbar */
+}

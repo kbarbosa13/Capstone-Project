@@ -1,8 +1,9 @@
+/* This is positioning styling for everything on the page the "*" signifies this */
 * {
-  margin: 0;
-  Padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;                                     /* Spacing between the borders of an element and the other elements around it */
+  padding: 0;                                    /* Spacing between the content and its border */
+  box-sizing: border-box;                        /* Messing with this before eating */
+  font-family: Arial, Helvetica, sans-serif;     /* Defines the font used  */
 }
 
 

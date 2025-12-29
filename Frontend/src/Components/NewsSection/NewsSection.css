@@ -1,0 +1,62 @@
+/* This is the styling for the News cards secction */
+/* Positioning for each individual news card */
+
+/*--------------------------------------------------------------------- News cards styling -------------------------------------------------------*/
+.news-container {
+  display: grid;                                                 /* Displays the content in a grid layout */
+  grid-template-columns: repeat(3, minmax(250px, 1fr));          /* This defines the content to be seperated out into three columns. grid-template-columns: sets the styling for the columns of the grid. repeat(3) will set the column sizing within the function to repeat 3 times creating 3 columns. minmax(250px, 1fr) sets the min and maximum that each news card can take up. first value being the being the minimum of 250px and the second value being a fractional unit which allows the cards to spread and divide the space evenly that is left to take */
+  gap: 30px;                                                     /* Puts a gap of 30px between each news card */
+  padding: 0 10px;                                               /* Adds 10px of padding between the left and right sides of each news card */
+  margin-left: 20px;                                             /* Adds 20px of margin padding essentially just making sure that there is 20 px of space between the news cards overall container and the other elements on the page */ 
+}
+
+/* Styling for the news cards */
+.news-card {
+  width: 100%;                                                   /* Sets the width of the news card to take up 100% of its container */
+  height: 100%;                                                  /* Sets the height of the news card to take up 100% of its container */
+  background-color: #1096b7;                                   /* Sets the background color of the news card */
+  text-decoration: none;                                         /* Removes any text decoration from the content on the news card (important to remove the automatic underlines that comes with the a tag usage) */
+  border-radius: 10px;                                           /* Modifies the border radius of the news card giving the rounded corners look that the news card has */
+  overflow: hidden;                                              /* Hides the overflow of the content that goes outside of the border of news card. (This prevents the images from leaving the area specified by the defined borders. (without this the images will not have a rounded corner to match the rest of the news card) */
+  display: flex;                                                 /* Enables flexbox layout for the news card */
+  flex-direction: column;                                        /* Sets flexbox layout direction to be column meaning that it will stack the content on top of each other (just like columns). */
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);                     /* Adds the shadow to the news card. (horizontal offset, vertical offset, blur, rgba (color of the shadow) */
+}
+
+/* Positioning of the images within the news card (Anything using the img tag) */
+.news-card img {
+  width: 100%;                                                   /* Sets the width of the image to 100% of its container */
+  height: 50%;                                                   /* Sets the height of the image to be 50% of its container (giving the 50/50 split of text and image on each news card */
+  object-fit: cover;                                             /* Sets the image to be resized to cover its whole space */
+}
+
+/* News card title styling for anything using the h3 tag */
+.news-card h3 {
+  padding: 10px;                                                 /* Spacing between the h3 tag text and the container (single value applies it to all sides) */
+  color: #ffffff;                                              /* Changes the color of the text of the h3 tag */
+}
+
+/* Card story text styling */
+.news-card p {
+  padding: 0 10px 10px 10px;                                     /* Adds spacing between the p tag text and its container (top, right, bottom, left) */
+  font-size: 14px;                                               /* Size of the font of the p tag text */
+  color: #ffffff;                                              /* Changes the color of the text to white */
+}
+
+/*------------------------------------------------------------------------------ Styling of entire news container -------------------------------------*/
+
+/* This is a wrapper container for the news section that applies positioning to the whole section */
+.news-section {
+  width: 100%;                                                   /* Sets the width of the of the news section to be 100% of its container  */
+  margin: 0 auto;                                                /* Sets the spacing between the container and other elements  */
+  padding: 40px 20px;                                            /* Sets the spacing between the border and the content within it (Aligns the news cards and the section header) */
+}
+
+/* This is a styling for the h2 element (section header text) */
+.news-section h2 {
+  font-size: 2rem;                                               /* Changes the font-size to be about 32 px (1rem is about 16px on most browsers) */
+  font-weight: bold;                                             /* Makes the font bold for the text for the section header */      
+  color: #001b3d;                                              /* Makes the color of the font same color as the navbar background */
+  margin-bottom: 24px;                                           /* Sets the spacing between the container of the h2 element and the other elements around it on the bottom side of the container */
+  padding-left: 10px;                                            /* Applies spacing between the container and the h2 text of 30 px on the left side */
+}
